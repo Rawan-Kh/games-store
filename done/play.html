@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/slider.css">
+    <link rel="stylesheet" href="./styles/scrollbar.css">
+    <link rel="stylesheet" href="./styles/footerr.css">
+    <style>
+       body,html{
+           overflow-x: hidden;
+       }
+       .ag-container-shops{
+          margin-left: 100px;
+         overflow: visible;
+       }
+       .js-flickity-slider{
+           width: 1400px;
+          margin-left: -350px;
+       }
+       .more{
+        position: relative;
+         top: 30%;
+         left: 30%;
+         padding: 0% 8%;
+       }
+       .more button{
+        background-color: aquamarine;
+         border-radius: 100%;
+         color: white;
+         text-decoration: none;
+         color: white;
+       }
+       .modal{
+         display: none;
+         position: fixed;
+         z-index: 1;
+         width: 100%;
+         height: 100%;
+         background-color: rgb(0,0,0,0.4);
+       }
+       .modalbody{
+         background-color: white;
+       }
+       .close{
+         position: fixed;
+         top: 0%;
+         right: 0%;
+         background-color: orangered;
+         color: white;
+         font-size: larger;
+         padding:10px 15px;
+         border: none;
+       }
+@media (max-width: 768px) {
+.level ,.coin{
+    height: 35px;
+}
+.coin img{
+    width: 35px;
+    height: 35px;
+}
+.ag-container-shops{
+          margin-left: -200px;
+} 
+}
+    </style>
+
+</head>
+<body>
+    <nav class="head d-flex justify-content-between container py-3 text-light">
+        <div class="level bg-secondary d-flex justify-content-between rounded-pill pe-1 pe-4  pt-lg-1 fw-bold "> <h4 class="bg-info px-2 me-2 rounded-circle">3</h4><p class=" pt-2 ">57/200</p></div>
+        <div class="coin bg-secondary d-flex justify-content-between rounded-pill pe-2 pe-4 pt-lg-1 fw-bold">  <img src="imgs\icons\zendoit.png" class="me-2" width="45" height="45" ><p class=" pt-2 ">3255</p> <h3 class="more"><button id="Morebtn">+</button> </h3> </div>
+    </nav>
+    <h4 class="text-center text-capitalize pt-4"> Popular games</h4>
+    <div id="myModal" class="modal">
+      <div class="modalbody shop-box container text-center">
+        <!-- <h3 class="text-center text-light">Edit Avatar </h3> -->
+        <div class=" bd-example">
+            <nav class="ms-5 mt-3 mb-5">
+                   <h3>shop</h3>
+                   <button class="close">x</button>
+             <div class="nav nav-tabs n-outline taskNav  " id="nav-tab" role="tablist">
+               <!-- <button class="nav-link active" id="nav-skin-tab" data-bs-toggle="tab" data-bs-target="#nav-skin" type="button" role="tab" aria-controls="nav-skin" aria-selected="true">skin</button> -->
+               <!-- <button class="nav-link" id="nav-eyes-tab" data-bs-toggle="tab" data-bs-target="#nav-eyes" type="button" role="tab" aria-controls="nav-eyes" aria-selected="false">eyes</button>
+               <button class="nav-link" id="nav-nose-tab" data-bs-toggle="tab" data-bs-target="#nav-nose" type="button" role="tab" aria-controls="nav-nose" aria-selected="false">nose</button> -->
+             </div>
+           </nav>
+          
+           <div class="tab-content edit-pg" id="nav-tabContent">
+             <!-- <div class="tab-pane scroll-choice fade show active" id="nav-skin" role="tabpanel" aria-labelledby="nav-skin-tab"> -->
+             <div class="tab-pane  fade show active" id="nav-skin" role="tabpanel" aria-labelledby="nav-skin-tab">
+               <div class="row row-cols-2 row-cols-sm-1 row-cols-md-4 g-1">
+
+                 <div class="col">
+                   <div class="text-center">
+                     <img class="locked" src="imgs/getPixels/buyv2.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                     <div class=" card-bodyy ">
+                         <h5 class="text-muted mt-3">10</h5>
+                         <button type="button" class="btn mt-3 m-5 btn-outline-secondary">Watch AD</button>
+                     </div>
+                   </div>
+                 </div>        
+
+                   <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/getPixels/buyv2.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>   
+                     <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/getPixels/buy2.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>        
+                     <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/getPixels/buy3.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>   
+                     <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/getPixels/buy4.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>   
+                     <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/getPixels/buy5.png" alt="badge" title="solve 3 task" width="95" height="95" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>   
+                     <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/getPixels/buy6.png" alt="badge" title="solve 3 task" width="95" height="95" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>   
+                     <!-- <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">watch Ads</button>
+                         </div>
+                       </div>
+                     </div>   
+                     <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>    -->
+                   </div>
+             </div>
+             <div class="tab-pane fade" id="nav-eyes" role="tabpanel" aria-labelledby="nav-eyes-tab">
+                   <div class="row row-cols-3 row-cols-sm-1 row-cols-md-4 g-1">
+                   
+                       
+                       <div class="col">
+                           <div class="text-center">
+                             <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                             <div class=" card-bodyy ">
+                                 <h5 class="text-muted mt-3">20</h5>
+                                 <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                             </div>
+                           </div>
+                         </div>   
+                         <div class="col">
+                           <div class="text-center">
+                             <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                             <div class=" card-bodyy ">
+                                 <h5 class="text-muted mt-3">20</h5>
+                                 <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                             </div>
+                           </div>
+                         </div>        
+                         <div class="col">
+                           <div class="text-center">
+                             <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                             <div class=" card-bodyy ">
+                                 <h5 class="text-muted mt-3">20</h5>
+                                 <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                             </div>
+                           </div>
+                         </div>   
+                         <div class="col">
+                           <div class="text-center">
+                             <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                             <div class=" card-bodyy ">
+                                 <h5 class="text-muted mt-3">20</h5>
+                                 <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                             </div>
+                           </div>
+                         </div>   
+                         <div class="col">
+                           <div class="text-center">
+                             <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                             <div class=" card-bodyy ">
+                                 <h5 class="text-muted mt-3">20</h5>
+                                 <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                             </div>
+                           </div>
+                         </div>   
+                         <div class="col">
+                           <div class="text-center">
+                             <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                             <div class=" card-bodyy ">
+                                 <h5 class="text-muted mt-3">20</h5>
+                                 <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                             </div>
+                           </div>
+                         </div>   
+                         <div class="col">
+                           <div class="text-center">
+                             <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                             <div class=" card-bodyy ">
+                                 <h5 class="text-muted mt-3">20</h5>
+                                 <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                             </div>
+                           </div>
+                         </div>   
+                         <div class="col">
+                           <div class="text-center">
+                             <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                             <div class=" card-bodyy ">
+                                 <h5 class="text-muted mt-3">20</h5>
+                                 <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                             </div>
+                           </div>
+                         </div>  
+                 </div>
+             </div>
+             <div class="tab-pane fade" id="nav-nose" role="tabpanel" aria-labelledby="nav-nose-tab">
+               <div class="row row-cols-3 row-cols-sm-1 row-cols-md-4 g-1">
+                   <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>   
+                     <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>        
+                     <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>   
+                     <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>   
+                     <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>   
+                     <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>   
+                     <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>   
+                     <div class="col">
+                       <div class="text-center">
+                         <img class="locked" src="imgs/icons/1st place pixel.png" alt="badge" title="solve 3 task" width="75" height="75" alt="">
+                         <div class=" card-bodyy ">
+                             <h5 class="text-muted mt-3">20</h5>
+                             <button type="button" class="btn mt-3 m-5 btn-outline-secondary">$30</button>
+                         </div>
+                       </div>
+                     </div>  
+             </div>
+             </div>
+      
+            
+           </div>
+           </div>
+    </div>
+    </div>
+    <article class=" col-6 pt-2">
+        <div class="ag-container-shops ">
+         <div class="js-flickity-slider">
+           <section class="js-carousel-cell">
+             <div class="ag-shop-card_box-wrap">
+               <div class="ag-shop-card_box">
+                 <div class="ag-shop-card_body">
+                   <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card02.svg);"></div>
+                 
+                 </div>
+                 <div class="ag-shop-card_footer">
+                   <span class="ag-shop-card-footer_title">woof dash</span>
+             
+                 </div>
+               </div>
+             </div>
+            </section>
+
+            <section class="js-carousel-cell">
+                <div class="ag-shop-card_box-wrap">
+                  <div class="ag-shop-card_box">
+                    <div class="ag-shop-card_body">
+                      <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card02.svg);"></div>
+                    
+                    </div>
+                    <div class="ag-shop-card_footer">
+                      <span class="ag-shop-card-footer_title">woof dash</span>
+                
+                    </div>
+                  </div>
+                </div>
+               </section>
+
+           <section class="js-carousel-cell">
+             <div class="ag-shop-card_box-wrap">
+               <div class="ag-shop-card_box">
+                 <div class="ag-shop-card_body">
+                   <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card01.svg);"></div>
+                 </div>
+                 <div class="ag-shop-card_footer">
+                   <span class="ag-shop-card-footer_title">delivery game</span>
+             </div>
+               </div>
+             </div>
+           </section>
+     
+           <section class="js-carousel-cell">
+             <div class="ag-shop-card_box-wrap">
+               <div class="ag-shop-card_box">
+                 <div class="ag-shop-card_body">
+                   <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card03.svg);"></div>
+                 </div>
+                 <div class="ag-shop-card_footer">
+                   <span class="ag-shop-card-footer_title">flip flap</span>
+             </div>
+               </div>
+             </div>
+           </section>
+     
+           <section class="js-carousel-cell">
+             <div class="ag-shop-card_box-wrap">
+               <div class="ag-shop-card_box">
+                 <div class="ag-shop-card_body">
+                   <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card02.svg);"></div>
+                 </div>
+                 <div class="ag-shop-card_footer">
+                   <span class="ag-shop-card-footer_title">swippy</span> 
+                 </div>
+               </div>
+             </div>
+           </section>
+         </div>
+        </div>
+    </article>
+
+    <div class="seemore pt-5  d-flex justify-content-between container">
+        <h5 class="ms-3">Adventure</h5>
+        <p class=" text-light bg-info p-2 rounded-3">See More</p>
+    </div>
+    <article class=" col-6 pt-2">
+        <div class="ag-container-shops ">
+         <div class="js-flickity-slider">
+           <section class="js-carousel-cell">
+             <div class="ag-shop-card_box-wrap">
+               <div class="ag-shop-card_box">
+                 <div class="ag-shop-card_body">
+                   <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card02.svg);"></div>
+                 
+                 </div>
+                 <div class="ag-shop-card_footer">
+                   <span class="ag-shop-card-footer_title">woof dash</span>
+             
+                 </div>
+               </div>
+             </div>
+            </section>
+            <section class="js-carousel-cell">
+                <div class="ag-shop-card_box-wrap">
+                  <div class="ag-shop-card_box">
+                    <div class="ag-shop-card_body">
+                      <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card02.svg);"></div>
+                    
+                    </div>
+                    <div class="ag-shop-card_footer">
+                      <span class="ag-shop-card-footer_title">woof dash</span>
+                
+                    </div>
+                  </div>
+                </div>
+               </section>
+     
+           <section class="js-carousel-cell">
+             <div class="ag-shop-card_box-wrap">
+               <div class="ag-shop-card_box">
+                 <div class="ag-shop-card_body">
+                   <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card01.svg);"></div>
+                 </div>
+                 <div class="ag-shop-card_footer">
+                   <span class="ag-shop-card-footer_title">delivery game</span>
+             </div>
+               </div>
+             </div>
+           </section>
+     
+           <section class="js-carousel-cell">
+             <div class="ag-shop-card_box-wrap">
+               <div class="ag-shop-card_box">
+                 <div class="ag-shop-card_body">
+                   <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card03.svg);"></div>
+                 </div>
+                 <div class="ag-shop-card_footer">
+                   <span class="ag-shop-card-footer_title">flip flap</span>
+             </div>
+               </div>
+             </div>
+           </section>
+     
+           <section class="js-carousel-cell">
+             <div class="ag-shop-card_box-wrap">
+               <div class="ag-shop-card_box">
+                 <div class="ag-shop-card_body">
+                   <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card02.svg);"></div>
+                 </div>
+                 <div class="ag-shop-card_footer">
+                   <span class="ag-shop-card-footer_title">swippy</span> 
+                 </div>
+               </div>
+             </div>
+           </section>
+         </div>
+        </div>
+    </article>
+
+    <section class=" px-3 py-5 container text-center">
+        <h3  class="text-dark">Don't have enough zendoits?</h3>    
+        <img src="./imgs/card03.svg" width="245" height="275">
+        <p><a class="intro-btn px-4 buy" href="./getmore.html">Buy more.</a></p>
+    </section>
+
+    <div class="seemore pt-5  d-flex justify-content-between container">
+        <h5 class="ms-3">Endless</h5>
+        <a class=" text-light bg-info p-2 rounded-3" href="games.html">  See More</a>
+    </div>
+
+    <article class=" col-6 pt-2">
+        <div class="ag-container-shops ">
+         <div class="js-flickity-slider">
+           <section class="js-carousel-cell">
+             <div class="ag-shop-card_box-wrap">
+               <div class="ag-shop-card_box">
+                 <div class="ag-shop-card_body">
+                   <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card02.svg);"></div>
+                 
+                 </div>
+                 <div class="ag-shop-card_footer">
+                   <span class="ag-shop-card-footer_title">woof dash</span>
+             
+                 </div>
+               </div>
+             </div>
+            </section>
+
+            <section class="js-carousel-cell">
+                <div class="ag-shop-card_box-wrap">
+                  <div class="ag-shop-card_box">
+                    <div class="ag-shop-card_body">
+                      <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card02.svg);"></div>
+                    
+                    </div>
+                    <div class="ag-shop-card_footer">
+                      <span class="ag-shop-card-footer_title">woof dash</span>
+                
+                    </div>
+                  </div>
+                </div>
+               </section>
+
+           <section class="js-carousel-cell">
+             <div class="ag-shop-card_box-wrap">
+               <div class="ag-shop-card_box">
+                 <div class="ag-shop-card_body">
+                   <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card01.svg);"></div>
+                 </div>
+                 <div class="ag-shop-card_footer">
+                   <span class="ag-shop-card-footer_title">delivery game</span>
+             </div>
+               </div>
+             </div>
+           </section>
+     
+           <section class="js-carousel-cell">
+             <div class="ag-shop-card_box-wrap">
+               <div class="ag-shop-card_box">
+                 <div class="ag-shop-card_body">
+                   <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card03.svg);"></div>
+                 </div>
+                 <div class="ag-shop-card_footer">
+                   <span class="ag-shop-card-footer_title">flip flap</span>
+             </div>
+               </div>
+             </div>
+           </section>
+     
+           <section class="js-carousel-cell">
+             <div class="ag-shop-card_box-wrap">
+               <div class="ag-shop-card_box">
+                 <div class="ag-shop-card_body">
+                   <div class="js-card-bg ag-card-bg" style="background-image: url(imgs/card02.svg);"></div>
+                 </div>
+                 <div class="ag-shop-card_footer">
+                   <span class="ag-shop-card-footer_title">swippy</span> 
+                 </div>
+               </div>
+             </div>
+           </section>
+         </div>
+        </div>
+    </article>
+
+    <section class=" px-3 py-5 container text-center">
+        <h3  class="text-dark">Don't have enough zendoits?</h3>    
+        <img src="./imgs/card03.svg" width="245" height="275">
+        <p><a class="intro-btn px-4 buy" href="./getmore.html">Buy more.</a></p>
+    </section>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
+    <script src="js/slider2.js"></script>
+    <script>
+      var modal = document.getElementById("myModal");
+      var btn = document.getElementById("Morebtn");
+      var span = document.getElementsByClassName("close")[0];
+      btn.onclick = function(){
+        modal.style.display= "block";
+      }
+      span.onclick = function(){
+        modal.style.display="none";
+      }
+      window.onclick= function(event){
+        if(event.target == modal){
+          modal.style.display = "none";
+        }
+      }
+      </script>
+
+</body>
+</html>
