@@ -1,6 +1,6 @@
  .ag-container-shops {
     width: 700px;
-    /* overflow: hidden; */
+    overflow: hidden; 
   }
   .ag-card-bg {
     background-position: 50%;
