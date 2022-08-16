@@ -1,0 +1,134 @@
+body{
+    overflow: hidden;
+    background-color: rgb(35, 35, 71);
+}
+.allplayers1{
+    overflow-y: scroll;
+    max-height: 350px;
+}
+.allplayers2{
+    overflow-y: scroll;
+    max-height: 450px;
+}
+.taskNav{
+    margin: 5% 20% -3% 20%;
+}
+.hold1{
+    background-color: #292630;
+}
+.hold2{
+   background-color: rgb(55, 48, 70);
+}
+.hold1 , .hold2{
+border-radius: 7px;
+height: 600px;
+width: 70%;
+margin-left: 15%;
+margin-bottom: 0%;
+margin-top: 3%;
+padding-top: 2%;
+padding-bottom: 2%;
+position: relative;
+}
+
+.leaderboard.active{
+    border-bottom:#453e53;
+}
+.quests.active{
+    border-bottom:#292630;
+}
+.quest{
+justify-content: space-between;
+color:white;
+display: flex;
+text-align: center;
+width: 85%;
+font-size: medium;
+background-color: #453e53;
+border: 1px solid rgb(100, 97, 107);
+padding: 20px 50px 20px 70px;
+margin-left:35px;
+}
+.quest .name{
+font-size: medium;
+font-weight: 700;
+padding: 4%;
+}
+.quest .coin{
+height: 80px;
+width: 80px;
+color: rgb(75, 71, 71);
+padding: 10px 20px;
+padding-right: 50px;
+border-radius: 5px;
+box-shadow: inset 0px 1px 0px #9e8d84,0px 5px 0px 0px #585553,0px 10px 5px rgb(140, 122, 156);
+}
+#quests{
+    background-color: #292630;
+}
+#leaderboard{
+    background-color: rgb(55, 48, 70);
+}
+#leaderboard,#quests{
+    border-radius:40px 40px 0px 0px ;
+font-weight: bold;
+font-size: medium;
+color: rgb(173, 173, 173);
+}
+.long{
+width:250px;
+}
+
+@media only screen and (max-width:  425px) {
+    .long{
+        width: 50%;
+    }
+    .hold1 , .hold2{
+    border-radius: 7px;
+    height: 600px;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 0%;
+    margin-top: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    position: relative;
+    }
+    .quest{
+        justify-content: space-between;
+        color:white;
+        display: flex;
+        text-align: center;
+        width: 85%;
+        font-size: medium;
+        background-color: #453e53;
+        border: 1px solid rgb(100, 97, 107);
+        padding: 10px 10px 15px 10px;
+        margin-left:20px;
+        }
+        .quest .name2{
+            text-align: start;
+            font-size: small;
+            padding-right: 25%;
+            }
+            .quest .coin{
+                font-size: small;
+                font-weight: bold;
+            height: 60px;
+            width: 60px;
+            padding: 5px ;
+        }
+        .coin img{
+width: 60%;
+height: 40%;
+        }
+          
+          .top h3{
+     width: 100%;
+     margin-left: 40%;
+     font-size: medium;
+     text-align: center;
+          }
+
+
+}

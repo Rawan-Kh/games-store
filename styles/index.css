@@ -1,0 +1,24 @@
+.smaller{
+    padding-top: 23%;
+    padding-bottom: 6%;
+    
+}
+
+.btn-primaryy{
+    background-color: rgb(142, 142, 213);
+    color: white;
+}
+
+@media only screen and (max-width:  768px) {
+    .smaller{
+        padding-bottom: 25%;
+    }
+    
+}
+.navbar-brand{
+    margin-left: 5%;
+}
+
+.navbar-toggler{
+    margin-left: 66%;
+}

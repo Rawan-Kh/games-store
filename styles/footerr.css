@@ -1,0 +1,53 @@
+.f-link{
+  margin-top: 2%;
+}
+
+.f-link a{
+  color: rgb(79, 79, 79);
+  text-decoration: none;
+}
+.f-link a:hover{
+  font-weight: 500;
+  color: royalblue;
+  font-size: large;
+transition: 0.2s;
+}
+
+.priv-pol a ,.float-end a{
+  text-decoration: none;
+  color: rgb(164, 89, 194);
+}
+.priv-pol a:hover{
+  color: royalblue;
+}
+.top-arrow{
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  height: 50px;
+  width: 50px;
+  padding: 3%;
+  background-color: rgb(255, 123, 0);
+  border-radius: 100%;
+  transform: rotate(270deg);
+}
+  .royal-border{
+    color:white;
+    padding: 28px 47px 28px;
+    border-radius: 15px;
+    box-shadow: 2.5px 4.33px 15px 0px rgb(75, 75, 255);
+    background-color: royalblue;
+  }
+  @media only screen and (max-width:  768px) {
+    .royal-border{
+      padding: 22px 41px 22px;
+    }
+
+  }
+  @media only screen and (max-width:  425px) {
+    .royal-border{
+      max-width: 70%;
+      margin: auto auto;
+    }
+  }
+

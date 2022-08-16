@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/profile.css">
+    <link rel="stylesheet" href="./styles/editAvatar.css">
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    
+</head>
+<body>
+    <style>
+            .avatar{
+    background-color: rgb(221, 195, 195);
+    border-radius: 100%;
+    width: 130px;
+    height: 130px;
+    margin-left: 37%;
+    position: relative;
+     }
+        .back-arrow{
+    height: 40px;
+    width: 40px;
+    background-color: darkorange;
+    border-radius: 100%;
+    padding: 15%;
+    transform: rotate(180deg);
+    margin-left: -85%;
+    margin-top: -80%;
+}
+        .avatar {
+            display: flex;
+            justify-content: center;
+            width: 250px;
+            height: 250px;
+            margin: 15% 20% 0% 25% ;
+        }
+        .face{
+            display: flex;
+            justify-content: center;
+            width: 210px;
+            height: 210px;
+            margin: 10% 25% -0% 20% ;
+        }
+        .editavtar-btn{
+            margin: 10%;
+        }
+        .scroll-choice{
+            overflow-x: hidden;
+           overflow-y: scroll;
+        }
+        .checkbox{
+            position:relative;
+        }
+        .hide{
+            width:120px;
+            height:133px;
+            z-index:1;
+            opacity:0.5;
+            position:absolute;
+            background-color:orange;
+        }
+      
+      .buy-avatar{
+        position:absolute;
+         width:70px;
+          z-index:1;
+          margin:40% 35% 30% -30%;
+      }
+@media (min-width:390px) and (max-width:  844px) {
+    .hide{
+    width:100px;
+    height:120px;
+  }
+  .pg2{
+    width: 400px;
+    height: 560px;
+    margin-top: -15%;
+  }
+  
+    .avatar{
+        height: 190px;
+        width: 190px;
+        margin: 0% 0% 0% 23%;
+    }
+    .face{
+            width: 170px;
+            height: 170px;
+        }
+    .pg1{
+        height:280px
+    }
+    .scroll-choice{
+        max-height: 400px;
+            overflow-x: hidden;
+           overflow-y: scroll;
+        }
+  
+}
+@media only screen and (max-width:  768px) {
+   .profile-container{
+       margin: 5%;
+   }
+}
+    </style>
+    <div class="profile-container container ">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-3">
+        <div class="pg1 container text-center ">
+
+            <div class="avatar ">
+                <div class="skin face"><img src="./imgs/icons/skin.png" alt=""></div> 
+                 <div class="hair face"><img src="./imgs/icons/hair.png" alt=""></div>
+                 <div class="eyes face"><img src="./imgs/icons/eyes.png" alt=""></div>
+                 <div class="nose face"><img src="./imgs/icons/nose.png" alt=""></div>
+                 <div class="mouthy face"><img src="./imgs/icons/mouth.png" alt=""></div>
+             </div>
+        
+             
+        
+        </div>
+     <div class="pg2 container text-center">
+         <!-- <h3 class="text-center text-light">Edit Avatar </h3> -->
+         <div class=" bd-example">
+            <nav>
+              <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-skin-tab" data-bs-toggle="tab" data-bs-target="#nav-skin" type="button" role="tab" aria-controls="nav-skin" aria-selected="true">skin</button>
+                <button class="nav-link" id="nav-eyes-tab" data-bs-toggle="tab" data-bs-target="#nav-eyes" type="button" role="tab" aria-controls="nav-eyes" aria-selected="false">eyes</button>
+                <button class="nav-link" id="nav-nose-tab" data-bs-toggle="tab" data-bs-target="#nav-nose" type="button" role="tab" aria-controls="nav-nose" aria-selected="false">nose</button>
+                <button class="nav-link" id="nav-mouth-tab" data-bs-toggle="tab" data-bs-target="#nav-mouth" type="button" role="tab" aria-controls="nav-mouth" aria-selected="false">mouth</button>
+                <button class="nav-link" id="nav-hair-tab" data-bs-toggle="tab" data-bs-target="#nav-hair" type="button" role="tab" aria-controls="nav-hair" aria-selected="false">hair</button>
+              </div>
+            </nav>
+           
+           
+            <div class="tab-content edit-pg" id="nav-tabContent">
+              <div class="tab-pane scroll-choice fade show active" id="nav-skin" role="tabpanel" aria-labelledby="nav-skin-tab">
+                <div class="row row-cols-3 row-cols-sm-1 row-cols-md-4 g-1">
+                    <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon "><img src="./imgs/icons/skin.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile">
+                                    <span class="checkbox-icon"><img src="./imgs/icons/skin.png"></span>
+                                </span>
+                            </label>
+                        </div>                 
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/skin.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>        <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/skin.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                      </div>        <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/skin.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <div class="hide">
+                                </div>
+                                <button class="buy-avatar">300 <img class="coin" width="20" height="20" src="./imgs/icons/zendoit.png"></button>
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/skin.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/skin.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/skin.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/skin.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/skin.png"></span>
+                                </span>
+                            </label>
+                        </div>                   
+                      </div>
+                    </div>
+              </div>
+              <div class="tab-pane fade" id="nav-eyes" role="tabpanel" aria-labelledby="nav-eyes-tab">
+                    <div class="row row-cols-3 row-cols-sm-1 row-cols-md-4 g-1">
+                        <div class="col">
+                            <div class="checkbox">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/eyes.png"></span>
+                                    </span>
+                                </label>
+                            </div>
+                           
+                        </div>
+                        
+                        <div class="col">
+                            <div class="checkbox">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/eyes.png"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            
+                          </div>
+                          <div class="col">
+                            <div class="checkbox">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/eyes.png"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            
+                          </div>
+                          <div class="col">
+                            <div class="checkbox">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/eyes.png"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            
+                          </div>
+                          <div class="col">
+                            <div class="checkbox">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/eyes.png"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            
+                          </div>
+                          <div class="col">
+                            <div class="checkbox">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/eyes.png"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            
+                          </div>
+                          <div class="col">
+                            <div class="checkbox">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/eyes.png"></span>
+                                    </span>
+                                </label>
+                            </div>                   
+                          </div>
+                  </div>
+              </div>
+              <div class="tab-pane fade" id="nav-nose" role="tabpanel" aria-labelledby="nav-nose-tab">
+                <div class="row row-cols-3 row-cols-sm-1 row-cols-md-4 g-1">
+                    <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/nose.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                       
+                    </div>
+                    
+                    <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/nose.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/nose.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/nose.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/nose.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/nose.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon"><img src="./imgs/icons/nose.png"></span>
+                                </span>
+                            </label>
+                        </div>                   
+                      </div>
+              </div>
+              </div>
+              <div class="tab-pane fade" id="nav-mouth" role="tabpanel" aria-labelledby="nav-mouth-tab">
+                <div class="row row-cols-3 row-cols-sm-1 row-cols-md-4 g-1">
+                    <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon mouth"><img src="./imgs/icons/mouth.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                       
+                    </div>
+                    
+                    <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon mouth"><img src="./imgs/icons/mouth.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon mouth"><img src="./imgs/icons/mouth.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon mouth"><img src="./imgs/icons/mouth.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon mouth"><img src="./imgs/icons/mouth.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon mouth"><img src="./imgs/icons/mouth.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon mouth"><img src="./imgs/icons/mouth.png"></span>
+                                </span>
+                            </label>
+                        </div>                   
+                      </div>
+              </div>
+              </div>
+              <div class="tab-pane fade" id="nav-hair" role="tabpanel" aria-labelledby="nav-hair-tab">
+                <div class="row row-cols-3 row-cols-sm-1 row-cols-md-4 g-1">
+                    <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon "><img src="./imgs/icons/hair.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                       
+                    </div>
+                    
+                    <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon "><img src="./imgs/icons/hair.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon "><img src="./imgs/icons/hair.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon "><img src="./imgs/icons/hair.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon "><img src="./imgs/icons/hair.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon "><img src="./imgs/icons/hair.png"></span>
+                                </span>
+                            </label>
+                        </div>
+                        
+                      </div>
+                      <div class="col">
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" value="1" name="fooby[1][]"/><span class="checkbox-tile"><span class="checkbox-icon "><img src="./imgs/icons/hair.png"></span>
+                                </span>
+                            </label>
+                        </div>                   
+                      </div>
+              </div>
+            </div>
+            </div>
+            </div>
+            <button class=" btn-lg editavtar-btn " type="submit">Save Changes</button>
+
+     </div>
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>// the selector will match all input controls of type :checkbox
+        // and attach a click event handler 
+        $("input:checkbox").on('click', function() {
+          // in the handler, 'this' refers to the box clicked on
+          var $box = $(this);
+          if ($box.is(":checked")) {
+            // the name of the box is retrieved using the .attr() method
+            // as it is assumed and expected to be immutable
+            var group = "input:checkbox[name='" + $box.attr("name") + "']";
+            // the checked state of the group/box on the other hand will change
+            // and the current value is retrieved using .prop() method
+            $(group).prop("checked", false);
+            $box.prop("checked", true);
+          } else {
+            $box.prop("checked", false);
+          }
+        });
+        </script>
+</body>
+</html>

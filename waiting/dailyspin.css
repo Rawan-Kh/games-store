@@ -1,0 +1,363 @@
+* {
+    box-sizing: border-box;
+  }
+  :root {
+    --size: 80;
+    --board-hue: 10;
+    --transition: 0.1;
+    --scene-perspective: 2400;
+    --board-perspective: 600;
+    --board-tilt: 45;
+  }
+  @media (min-width: 768px) {
+    :root {
+      --size: 65;
+    }
+  }
+  body {
+    background: #9fd4df;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  form {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+  }
+  #selector:checked {
+    height: 0;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  #selector:checked ~ .selector .selector__cards {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+  #selector:checked ~ .selector .selector__button {
+    display: none;
+  }
+  #selector:checked ~ .selector {
+    transform-origin: bottom left;
+    transform: translate(0, calc(-100% - 20px)) scale(0.5);
+    left: 20px;
+    top: 100%;
+    transition: transform 0.25s 0.5s ease, left 0.25s 0.5s ease, top 0.25s 0.5s ease;
+  }
+  @media (min-width: 992px) {
+    #selector:checked ~ .selector {
+      transform: translate(0, calc(-100% - 20px)) scale(0.75);
+    }
+  }
+  #selector:checked ~ [for='reset'],
+  #selector:checked ~ [for='blue'] {
+    -webkit-animation: fadeIn 0.25s 0.5s both ease;
+            animation: fadeIn 0.25s 0.5s both ease;
+    display: block;
+  }
+  #selector:checked ~ .board__wrapper .board {
+    display: grid;
+    -webkit-animation: fadeIn 0.25s 0.5s both ease;
+            animation: fadeIn 0.25s 0.5s both ease;
+  }
+  .card-flipper:checked + .card__slot .card {
+    transform: rotateX(0deg);
+  }
+  .card-flipper:checked + .card__slot:before {
+    transform: scaleY(1);
+  }
+  #blue:checked ~ .board__wrapper,
+  #blue:checked ~ .selector {
+    --board-hue: 220;
+  }
+  #blue:checked ~ [for='blue'] {
+    --board-hue: 10;
+  }
+  .board__wrapper {
+    height: 100vh;
+    width: 100vw;
+    perspective: calc(var(--scene-perspective, 2400) * 1px);
+  }
+  .board {
+    width: calc(var(--size) * 1vmin);
+    background: hsl(var(--board-hue), 90%, 45%);
+    padding: 2vmin;
+    grid-gap: 1.25vmin;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: repeat(var(--rows), 1fr);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+    perspective: calc(var(--board-perspective, 600) * 2px);
+    transform: translate(-50%, -50%) translate3d(0, 0, -250px) rotateX(calc(var(--board-tilt) * 1deg));
+    transition: background calc(var(--transition) * 1s) ease;
+  }
+  .board__front {
+    height: 5vmin;
+    width: 100%;
+    position: absolute;
+    background: hsl(var(--board-hue), 90%, 35%);
+    transition: background calc(var(--transition) * 1s) ease;
+    top: 100%;
+    left: 0;
+    transform-origin: top center;
+    transform: rotateX(-45deg);
+  }
+  .card {
+    --depth: 10;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    transform-origin: top center;
+    -webkit-backface-visibility: visible;
+            backface-visibility: visible;
+    transform-style: preserve-3d;
+    transition: transform 0.25s ease;
+    transform: rotateX(130deg);
+    padding-top: 180%;
+  }
+  .card__name {
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    padding-top: 10%;
+  }
+  @media (min-width: 992px) {
+    .card__name {
+      font-size: 1.5rem;
+    }
+  }
+  .card__picture {
+    background: hsl(var(--board-hue), 60%, 50%);
+    position: relative;
+    overflow: hidden;
+  }
+  .card__slot {
+    background: hsl(var(--board-hue), 80%, 50%);
+    box-shadow: 0 0 25px 5px hsl(var(--board-hue), 75%, 25%) inset;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: box-shadow calc(var(--transition) * 1s) ease, background calc(var(--transition) * 1s) ease;
+  }
+  .card__slot:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: rgba(0,0,0,0.25);
+    transform: scaleY(0);
+    transition: transform 0.25s ease;
+    transform-origin: top center;
+  }
+  .card__front {
+    background: #f2f2f2;
+    transform: translate3d(0, 0, calc(var(--depth) * -1px)) rotateY(180deg) rotate(180deg);
+    transform-style: preserve-3d;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    top: 0;
+    left: 0;
+  }
+  .card__front:after,
+  .card__front:before {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+  .card__front:after {
+    top: 0;
+    width: calc(var(--depth) * 1px);
+    height: 100%;
+    background: #ccc;
+    transform-origin: left;
+    transform: rotateY(90deg);
+  }
+  .card__front:before {
+    bottom: 0;
+    width: 100%;
+    height: calc(var(--depth) * 1px);
+    transform-origin: top center;
+    transform: translate(0, calc(var(--depth) * 1px)) rotateX(-90deg);
+    background: #d9d9d9;
+  }
+  .card__back {
+    background: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(180deg);
+    position: absolute;
+    transform-style: preserve-3d;
+    top: 0;
+    left: 0;
+  }
+  .card__back:after,
+  .card__back:before {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+  .card__back:after {
+    top: 0;
+    width: calc(var(--depth) * 1px);
+    height: 100%;
+    background: #ccc;
+    transform-origin: left;
+    transform: rotateY(90deg);
+  }
+  .card__back:before {
+    top: 0;
+    width: 100%;
+    height: calc(var(--depth) * 1px);
+    transform-origin: top center;
+    transform: translate(0, 0px) rotateX(-90deg);
+    background: #d9d9d9;
+  }
+  .card__back svg {
+    width: 50%;
+    fill: #666;
+  }
+  .card__front,
+  .card__back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  [type='checkbox'],
+  [type='reset'] {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    opacity: 0;
+  }
+  [for='reset'] {
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    height: 44px;
+    width: 44px;
+  }
+  [for='reset'] svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 40px;
+    width: 40px;
+    transform: translate(-50%, -50%);
+  }
+  [for='blue'] {
+    --board-hue: 220;
+    display: none;
+    position: fixed;
+    right: 40px;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    bottom: 94px;
+    cursor: pointer;
+    color: transparent;
+    transition: background calc(var(--transition) * 1s) ease;
+    background: hsl(var(--board-hue), 90%, 45%);
+  }
+  .selector {
+    display: inline-block;
+    background: hsl(var(--board-hue), 90%, 45%);
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: background calc(var(--transition) * 1s) ease;
+  }
+  .selector__button {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+  }
+  .selector__cards {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    -webkit-animation: shuffle 1s infinite steps(15);
+            animation: shuffle 1s infinite steps(15);
+  }
+  .selector__cards-wrapper {
+    overflow: hidden;
+    height: 300px;
+    width: 200px;
+  }
+  .selector__card {
+    background: #fff;
+    display: flex;
+    flex: 1 0 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 100%;
+    width: 100%;
+  }
+  .selector__card-content {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    grid-gap: 1vmin;
+    padding: 10%;
+  }
+  .selector__card .card__name {
+    font-size: 1.5rem;
+  }
+  .card__picture {
+    flex: 1 1 0;
+  }
+  .card__picture svg {
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 3%);
+  }
+  @-webkit-keyframes shuffle {
+    to {
+      transform: translate(0, -1500%);
+    }
+  }
+  @keyframes shuffle {
+    to {
+      transform: translate(0, -1500%);
+    }
+  }
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  }
+  

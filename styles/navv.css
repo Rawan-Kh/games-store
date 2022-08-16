@@ -1,0 +1,119 @@
+.top {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  color: whitesmoke;
+}
+
+.top header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto auto;
+  max-width: 1030px;
+  width: calc(100% - 5px);
+  height: 100%;
+}
+
+.top header p {
+  height: 10px;
+  margin-top: 3px;
+}
+
+.top header p .landing-direct {
+  font-size: 25px;
+  text-decoration: none;
+  color: white;
+}
+
+.top header .navbar {
+  display: flex;
+  height: 20px;
+}
+
+.top header .navbar li {
+  list-style: none;
+  margin: 0px 10px;
+}
+
+.top header .navbar li a {
+  text-decoration: none;
+  font-size: 25px;
+  color: whitesmoke;
+}
+
+.top header .ham {
+  display: none;
+}
+
+
+@media screen and (max-width: 600px) {
+  .intro-txt{
+    text-align: center;
+    padding-top: 100px;
+    padding: 80px;
+  }
+  .top header p .landing-direct {
+    padding-left: 1em;
+  }
+  .top{
+    max-width: 450px;
+    width: calc(100% - 20px);
+  }
+  .top header .ham {
+    display: inline-block;
+  }
+  .top header .navbar{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width:768px) {
+  .top header p .landing-direct {
+   margin-left: 40%;
+  }
+  .top{
+    width: calc(100% - 25px);
+  }
+}
+
+.popup {
+  position: fixed;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: -50px;
+  right: 0;
+  top: -150px;
+  bottom: 0;
+  z-index: 999;
+  transition-duration: 1s;
+  transition-property: transform;
+}
+
+.popup .ham-ul {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 1s ease-in;
+
+}
+
+.popup li {
+  list-style: none;
+  margin: 10px;
+}
+
+.popup li a {
+  text-decoration: none;
+  font-size: 40px;
+  color: black;
+}
+
+.disabled {
+  display: none;
+}
+
